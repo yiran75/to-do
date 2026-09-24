@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Things to do</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="slip">
+    <header class="top">
+      <p class="date" id="date"></p>
+      <h1>Things to do</h1>
+      <p class="tally" id="tally" aria-live="polite"></p>
+      <div class="perf" id="progress" role="progressbar" aria-label="Progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="perf-fill" id="bar"></div>
+      </div>
+    </header>
+
+    <section class="content">
+      <form id="addForm" class="add" autocomplete="off">
+        <input id="taskInput" type="text" placeholder="Type a task..." aria-label="New task">
+        <button type="submit" class="add-btn">Add</button>
+      </form>
+
+      <div class="filters" role="group" aria-label="Filter tasks">
+        <button class="filter active" data-filter="all" type="button">All</button>
+        <button class="filter" data-filter="active" type="button">Open</button>
+        <button class="filter" data-filter="done" type="button">Done</button>
+      </div>
+
+      <ul id="taskList" class="list"></ul>
+      <p id="empty" class="empty" hidden>Nothing here yet. Type a task above.</p>
+
+      <button id="clearBtn" class="clear" type="button">Clear finished</button>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
